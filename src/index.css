@@ -20,12 +20,17 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.btn-primary {
+  background-color: #ffc000;
+  color: black;
+}
 .item {
   border: 1px #404040 solid;
   margin: 1rem;
 }
-
+.rating span {
+  color: #ffc000;
+}
 .item img {
   width: 100%;
   max-width: 400px;
@@ -33,4 +38,162 @@ main {
 
 .product-info {
   padding: 1rem;
+}
+
+.img-large {
+  max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  min-width: 600px;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #ffc000;
+  color: #ffc000;
+}
+
+.fui-button-shiny-3 {
+  background: rgba(0, 0, 0, 0);
+  color: #1dc071;
+  padding: 16px 32px;
+  display: inline-block;
+  border: 1px solid #1dc071;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+  text-transform: capitalize;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.fui-button-shiny-3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.5s;
+  filter: blur(30px);
+  transform: translateX(-130px) skewX(-15deg);
+}
+.fui-button-shiny-3::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  width: 30px;
+  height: 100%;
+  left: 30px;
+  top: 0;
+  opacity: 0;
+  filter: blur(30px);
+  transform: translateX(-100px) skewX(-15deg);
+}
+.fui-button-shiny-3:hover {
+  background-color: #1dc071;
+  color: #fff;
+}
+.fui-button-shiny-3:hover::before {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  transition: all linear 0.5s;
+}
+.fui-button-shiny-3:hover::after {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  transition: all linear 0.5s;
+}
+
+.fui-footer-3 {
+  width: 100%;
+  padding: 40px 32px 20px;
+  background-color: #22242a;
+  color: #f1f5f9;
+}
+.fui-footer-3 .footer-category-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.fui-footer-3 .footer-category:first-child {
+  width: 320px;
+}
+.fui-footer-3 .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.fui-footer-3 .footer-logo img {
+  height: 40px;
+}
+.fui-footer-3 .footer-desc {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.fui-footer-3 .copy-right {
+  margin-top: 24px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.fui-footer-3 .social-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.fui-footer-3 .social-link {
+  transition: linear 0.25s;
+}
+.fui-footer-3 .social-link:hover {
+  opacity: 0.5;
+}
+.fui-footer-3 .footer-heading {
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+.fui-footer-3 .footer-category-item {
+  margin-bottom: 32px;
+}
+.fui-footer-3 .footer-category-item:last-child {
+  margin-bottom: 0;
+}
+.fui-footer-3 .footer-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.fui-footer-3 .footer-link {
+  transition: linear 0.2s;
+}
+.fui-footer-3 .footer-link:hover {
+  color: #1dc071;
+}
+.fui-footer-3 .footer-bottom {
+  margin-top: 32px;
+}
+.fui-footer-3 .footer-bottom-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.fui-footer-3 .footer-bottom-link {
+  font-size: 14px;
+  transition: linear 0.2s;
+}
+.fui-footer-3 .footer-bottom-link:hover {
+  color: #1dc071;
 }

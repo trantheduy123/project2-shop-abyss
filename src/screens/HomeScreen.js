@@ -1,8 +1,13 @@
-import { useEffect, useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Product from '../components/Product';
+
 //import data from '../data';
+import { Helmet } from 'react-helmet-async';
+import MessageBox from './../components/MessageBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -39,29 +44,23 @@ function HomeScreen() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>abyss</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
           <div>Loading...</div>
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          products.map((item) => (
-            <div className="item" key={item.slug}>
-              <Link to={`/product/${item.slug}`}>
-                <img src={item.image} alt={item.name} />
-              </Link>
-              <div className="product-info">
-                <Link to={`/product/${item.slug}`}>
-                  <p>{item.name}</p>
-                </Link>
-                <strong>
-                  <p>${item.price}</p>
-                </strong>
-                <button>Add product</button>
-              </div>
-            </div>
-          ))
+          <Row>
+            {products.map((item) => (
+              <Col key={item.slug} sm={6} md={4} lg={3} className="mb-3">
+                <Product item={item}> </Product>
+              </Col>
+            ))}
+          </Row>
         )}
       </div>
     </div>
